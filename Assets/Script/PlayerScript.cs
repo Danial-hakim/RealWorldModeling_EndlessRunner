@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public bool alive = true;
+
 
     void Update()
     {
