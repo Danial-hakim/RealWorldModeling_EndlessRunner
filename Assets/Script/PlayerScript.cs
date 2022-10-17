@@ -21,6 +21,9 @@ public class PlayerScript : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.setMaxHealth(maxHealth);
     }
+	
+    public bool alive = true;
+
 
     void Update()
     {

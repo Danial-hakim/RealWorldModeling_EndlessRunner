@@ -5,6 +5,7 @@ using TMPro;
 
 public class ScoreTimer : MonoBehaviour
 {
+    public PlayerScript player;
     public TextMeshProUGUI scoreText;
     public float score = 0;
 
@@ -17,7 +18,15 @@ public class ScoreTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime; // Adds 1 to score every second;
-        scoreText.text = ("Score: " + Mathf.RoundToInt(score).ToString()); // Rounds the score to an INT and displays it
+        if (!player.alive)
+        {
+            Debug.Log("Player not alive");
+        }
+        else
+        {
+            Debug.Log("Player alive");
+            score += Time.deltaTime; // Adds 1 to score every second;
+            scoreText.text = ("Score: " + Mathf.RoundToInt(score).ToString()); // Rounds the score to an INT and displays it
+        }
     }
 }
