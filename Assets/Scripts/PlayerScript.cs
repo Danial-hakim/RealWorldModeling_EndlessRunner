@@ -17,7 +17,20 @@ public class PlayerScript : MonoBehaviour
     private float invincibleDeltaTime = 0.3f;
 
     public Renderer renderer;
-
+	
+	public int maxHealth = 3;
+    public int currentHealth;
+	
+	public Healthbar healthbar;
+	
+	public bool alive = true;
+	
+	void Start()
+    {
+        currentHealth = maxHealth;
+        healthbar.setMaxHealth(maxHealth);
+    }
+	
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -30,6 +43,12 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+		
+		if (Input.GetKeyDown(KeyCode.T))
+        {
+            TakeDamage(1);
+            Debug.Log("Pressing T");
         }
     }
 
@@ -80,5 +99,16 @@ public class PlayerScript : MonoBehaviour
     public void loseHealth()
     {
         StartCoroutine(BecomeTemporarilyInvincible());
+    }
+	
+	void TakeDamage(int t_damage)
+    {
+        currentHealth -= t_damage;
+        healthbar.setHealth(currentHealth);
+
+        if (currentHealth == 0)
+        {
+            alive = false;
+        }
     }
 }

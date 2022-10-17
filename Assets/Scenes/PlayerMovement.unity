@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1599779578 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2222879572538309812, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+  m_PrefabInstance: {fileID: 1890332566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1828140253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309811, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 1599779578}
     - target: {fileID: 2222879572538309815, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: m_RootOrder
       value: 3
