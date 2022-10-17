@@ -68,6 +68,7 @@ public class PlayerScript : MonoBehaviour
         {
             if(!isInvincible)
             {
+                TakeDamage(1);
                 loseHealth();
                 Debug.Log("Hit");
             }
