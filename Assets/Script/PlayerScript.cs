@@ -7,11 +7,21 @@ public class PlayerScript : MonoBehaviour
     private float horizontal;
     private float speed = 10.0f;
     private float jumpingPower = 20.0f;
+    public int maxHealth = 3;
+    public int currentHealth;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public Healthbar healthbar;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthbar.setMaxHealth(maxHealth);
+    }
+	
     public bool alive = true;
 
 
@@ -28,6 +38,18 @@ public class PlayerScript : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TakeDamage(1);
+            Debug.Log("Pressing T");
+        }
+    }
+
+    void TakeDamage(int t_damage)
+    {
+        currentHealth -= t_damage;
+        healthbar.setHealth(currentHealth);
     }
 
     private void FixedUpdate()
