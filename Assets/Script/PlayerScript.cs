@@ -50,6 +50,11 @@ public class PlayerScript : MonoBehaviour
     {
         currentHealth -= t_damage;
         healthbar.setHealth(currentHealth);
+
+        if (currentHealth == 0)
+        {
+            alive = false;
+        }
     }
 
     private void FixedUpdate()

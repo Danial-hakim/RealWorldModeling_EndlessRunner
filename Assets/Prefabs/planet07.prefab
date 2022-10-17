@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3613126795703704456}
   - component: {fileID: 3613126795703704457}
   - component: {fileID: 3613126795703704460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: planet07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6020ea35043bb70468939b3fe9fe54d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   rb: {fileID: 3613126795703704456}
+  timer: 0
 --- !u!114 &3613126795703704460
 MonoBehaviour:
   m_ObjectHideFlags: 0
