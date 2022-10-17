@@ -22,13 +22,18 @@ public class PlayerScript : MonoBehaviour
     public int currentHealth;
 	
 	public Healthbar healthbar;
-	
-	public bool alive = true;
+
+    public int Maxfuel = 10;
+
+    public FuelGuage fuelGuage;
+
+    public bool alive = true;
 	
 	void Start()
     {
         currentHealth = maxHealth;
         healthbar.setMaxHealth(maxHealth);
+        fuelGuage.setMaxFuel(Maxfuel);
     }
 	
     void Update()
@@ -55,6 +60,8 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        fuelGuage.reduceFuel();
     }
 
     private bool IsGrounded()
