@@ -31,8 +31,6 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
-        Debug.Log(rb.velocity.y);
     }
 
     private bool IsGrounded()
@@ -40,4 +38,11 @@ public class PlayerScript : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Obstacles"))
+        {
+            Debug.Log("Hit");
+        }
+    }
 }
