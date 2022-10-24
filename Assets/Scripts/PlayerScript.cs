@@ -64,7 +64,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Obstacles"))
+        if(other.gameObject.CompareTag("Obstacles") || other.gameObject.CompareTag("Shrapnel"))
         {
             if(!isInvincible)
             {

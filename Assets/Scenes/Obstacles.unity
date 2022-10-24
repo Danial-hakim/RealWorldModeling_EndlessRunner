@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3882021}
   m_Layer: 6
   m_Name: ship (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,6 +325,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309808, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309810, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309810, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309810, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2222879572538309811, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: renderer
       value: 
@@ -345,17 +361,21 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -683788225
       objectReference: {fileID: 0}
+    - target: {fileID: 2222879572538309813, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2222879572538309815, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2222879572538309815, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.94
+      value: -8.74
       objectReference: {fileID: 0}
     - target: {fileID: 2222879572538309815, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.95
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 2222879572538309815, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
       propertyPath: m_LocalPosition.z
@@ -400,7 +420,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2222879572538309811, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
   m_PrefabInstance: {fileID: 164587564}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 507050763}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f305b87a72ad8a94dbb7e11d2d9c15d0, type: 3}
@@ -425,7 +445,7 @@ GameObject:
   - component: {fileID: 382073455}
   m_Layer: 6
   m_Name: ship (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +632,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393334839}
   m_CullTransparentMesh: 1
+--- !u!1 &507050763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2222879572538309808, guid: 4979355ac3c47c947865d3924b30c369, type: 3}
+  m_PrefabInstance: {fileID: 164587564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &507050767
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507050763}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: fcd27de948496494d9bc113e2d736b76, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &625565066
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d7d8f88eb160642b3812d5d15aa58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bomber: {fileID: 2784602187830403868, guid: b30b9a5eb121f1a49a70ba43b3afe06c, type: 3}
+  bomberInstance: {fileID: 0}
   obstacles: {fileID: 3613126795703704458, guid: 2d948badf407cd64fa184bb8310602bb, type: 3}
+  drop: 0
 --- !u!4 &738103434
 Transform:
   m_ObjectHideFlags: 0
@@ -942,7 +996,7 @@ GameObject:
   - component: {fileID: 961917962}
   m_Layer: 6
   m_Name: ship (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1346,7 +1400,7 @@ GameObject:
   - component: {fileID: 1436888087}
   m_Layer: 6
   m_Name: ship
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1606,7 +1660,7 @@ GameObject:
   - component: {fileID: 1600888815}
   m_Layer: 6
   m_Name: ship (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
