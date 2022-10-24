@@ -28,8 +28,10 @@ public class PlayerScript : MonoBehaviour
     public FuelGuage fuelGuage;
 
     public bool alive = true;
-	
-	void Start()
+
+    public GameObject camera;
+
+    void Start()
     {
         currentHealth = maxHealth;
         healthbar.setMaxHealth(maxHealth);
@@ -43,6 +45,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            camera.GetComponent<DynamicCameraController>().trauma = 0.7f;
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
